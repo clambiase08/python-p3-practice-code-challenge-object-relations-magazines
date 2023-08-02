@@ -1,4 +1,4 @@
-from classes.subscription import Subscription
+# from classes.subscription import Subscription
 
 
 class Reader:
