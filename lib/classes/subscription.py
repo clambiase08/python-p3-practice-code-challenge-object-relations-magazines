@@ -35,7 +35,7 @@ class Subscription:
 
     @property
     def price(self):
-        return "%.2f" % self._price
+        return float("{:.2f}".format(self._price))
 
     @price.setter
     def price(self, price):
@@ -44,5 +44,8 @@ class Subscription:
         else:
             raise Exception("Invalid price")
 
-    def __repr__(self):
-        return f"<Subscription | Magazine: {self.magazine}, Reader: {self.reader}, Price: {self.price}>"
+    def print_details(self):
+        print(f"{self.reader} subscribed to {self.magazine} for ${self.price}")
+
+    # def __repr__(self):
+    #     return f"<Subscription | Magazine: {self.magazine}, Reader: {self.reader}, Price: {self.price}>"

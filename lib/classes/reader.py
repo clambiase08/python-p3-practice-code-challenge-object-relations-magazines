@@ -43,5 +43,16 @@ class Reader:
     def magazines(self):
         return [subscription.magazine for subscription in self.subscriptions()]
 
+    def subscribe(self, magazine, price):
+        from classes.subscription import Subscription
+
+        Subscription(magazine, self, price)
+
+    def total_subscription_price(self):
+        return sum([subscription.price for subscription in self.subscriptions()])
+
+    def cancel_subscription(magazine):
+        pass
+
     def __repr__(self):
-        return f"<Reader | name: {self.name} email: {self.email}>"
+        return f"{self.name}"

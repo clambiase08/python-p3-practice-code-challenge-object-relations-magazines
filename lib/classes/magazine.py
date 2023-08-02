@@ -28,5 +28,18 @@ class Magazine:
     def readers(self):
         return [subscription.reader for subscription in self.subscriptions()]
 
+    def email_list(self):
+        emails = [subscription.reader.email for subscription in self.subscriptions()]
+        return ";".join(emails)
+
+    @classmethod
+    def most_popular(cls):
+        # return sorted(
+        #     [magazine for magazine in cls.all],
+        #     key=lambda magazine: len(magazine.subscriptions()),
+        #     reverse=True,
+        # )[0]
+        return max(cls.all, key=lambda magazine: len(magazine.subscriptions()))
+
     def __repr__(self):
-        return f"<Magazine: {self.title}>"
+        return f"{self.title}"
