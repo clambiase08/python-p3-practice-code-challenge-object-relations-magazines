@@ -45,28 +45,45 @@ comments describing your progress.
 
 Write the following methods in the classes in the files provided. Feel free to build out any helper methods if needed.
 
+_Where would you place a class variable all = [] to act as a Single Source of Truth?_
+ 
 ### Initializers and Properties
 
 #### Magazine
 - `Magazine __init__(self, title)`
-    Magazine should be initialized with a title
+   - Magazine should be initialized with a title
+- `Magazine property title`
+   - should return the magazine's title
+   - title must be a string
+   - the title cannot be changed after initialzation
 
 #### Reader
 - `Reader __init__(self, name, email)`
-    Reader should be initialized with a name and an email
+   - Reader should be initialized with a name and an email
+- `Reader property name`
+   - should return the readers name
+   - cannot be an empty string
+- `Reader property email`
+   - should return the readers email
+   - cannot be an empty string
 
 #### Subscription
 - `Subscription __init__(self, magazine, reader, price)`
-    Subscription should be initialized with a magazine, reader, and a price
-
-### Object Relationship Methods and Properties
-
-#### Subscription
-- `Subscription reader(self)`
+   - Subscription should be initialized with a magazine, reader, and a price
+- `Subscription property reader(self)`
   - should return the `Reader` instance for this subscription
+  - must be of type `Reader`
+  - `raise Exeption` if setter fails
 - `Subscription magazine(self)`
   - should return the `Magazine` instance for this subscription
+  - must be of type `Reader`
+  - `raise Exeption` if setter fails
+- `Subscription property price(self)`
+  - should return the price of the subscription as a 2-decimal float
+  - must be floats between 1.00 and 49.99 inclusive
+  - `raise Exeption` if setter fails
 
+### Object Relationship Methods
 
 #### Magazine
 - `Magazine subscriptions(self)`
