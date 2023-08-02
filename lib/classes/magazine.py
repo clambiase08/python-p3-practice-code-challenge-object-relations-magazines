@@ -35,10 +35,9 @@ class Magazine:
     @classmethod
     def most_popular(cls):
         # return sorted(
-        #     [magazine for magazine in cls.all],
-        #     key=lambda magazine: len(magazine.subscriptions()),
-        #     reverse=True,
-        # )[0]
+        #     cls.all,
+        #     key=lambda magazine: len(magazine.subscriptions())
+        # )[-1]
         return max(cls.all, key=lambda magazine: len(magazine.subscriptions()))
 
     def __repr__(self):

@@ -51,8 +51,15 @@ class Reader:
     def total_subscription_price(self):
         return sum([subscription.price for subscription in self.subscriptions()])
 
-    def cancel_subscription(magazine):
-        pass
+    def cancel_subscription(self, magazine):
+        from classes.subscription import Subscription
+
+        sub_to_remove = [
+            subscription
+            for subscription in self.subscriptions()
+            if subscription.magazine == magazine
+        ][0]
+        Subscription.remove(sub_to_remove)
 
     def __repr__(self):
         return f"{self.name}"
