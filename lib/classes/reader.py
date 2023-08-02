@@ -31,5 +31,17 @@ class Reader:
         else:
             raise Exception("Invalid email")
 
+    def subscriptions(self):
+        from classes.subscription import Subscription
+
+        return [
+            subscription
+            for subscription in Subscription.all
+            if subscription.reader == self
+        ]
+
+    def magazines(self):
+        return [subscription.magazine for subscription in self.subscriptions()]
+
     def __repr__(self):
         return f"<Reader | name: {self.name} email: {self.email}>"
