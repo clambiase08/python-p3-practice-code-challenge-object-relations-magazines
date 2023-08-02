@@ -45,7 +45,9 @@ class Subscription:
             raise Exception("Invalid price")
 
     def print_details(self):
-        print(f"{self.reader} subscribed to {self.magazine} for ${self.price}")
+        print(
+            f"{self.reader.name} subscribed to {self.magazine.title} for ${self.price}"
+        )
 
     # def __repr__(self):
     #     return f"<Subscription | Magazine: {self.magazine}, Reader: {self.reader}, Price: {self.price}>"

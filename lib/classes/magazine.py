@@ -40,5 +40,5 @@ class Magazine:
         # )[-1]
         return max(cls.all, key=lambda magazine: len(magazine.subscriptions()))
 
-    def __repr__(self):
-        return f"{self.title}"
+    # def __repr__(self):
+    #     return f"{self.title}"

@@ -59,7 +59,7 @@ class Reader:
             for subscription in self.subscriptions()
             if subscription.magazine == magazine
         ][0]
-        Subscription.remove(sub_to_remove)
+        Subscription.all.remove(sub_to_remove)
 
-    def __repr__(self):
-        return f"{self.name}"
+    # def __repr__(self):
+    #     return f"{self.name}"
