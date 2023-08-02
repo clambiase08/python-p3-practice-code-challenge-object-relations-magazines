@@ -1,6 +1,3 @@
-# from classes.subscription import Subscription
-
-
 class Magazine:
     all = []
 
@@ -18,6 +15,18 @@ class Magazine:
             self._title = value
         else:
             raise Exception("Title must be a string")
+
+    def subscriptions(self):
+        from classes.subscription import Subscription
+
+        return [
+            subscription
+            for subscription in Subscription.all
+            if subscription.magazine == self
+        ]
+
+    def readers(self):
+        return [subscription.reader for subscription in self.subscriptions()]
 
     def __repr__(self):
         return f"<Magazine: {self.title}>"
